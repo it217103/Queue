@@ -2,13 +2,11 @@ import java.util.NoSuchElementException;
 
 public class LinkedQueue implements Queue {
 
-    private int first;
-    private int last;
+    private int first=0;
+    private int last=0;
     private int size;
     private Object[] N;
     public static final int SIZE = 100;
-
-
 
     public LinkedQueue() {
         this(SIZE);
@@ -18,40 +16,30 @@ public class LinkedQueue implements Queue {
         size = siz;
         N = new Object[size];
     }
-    public LinkedQueue(int first, int last, int size) {
-        this.first = first;
-        this.last = last;
-        this.size = size;
-    }
-
-
     @Override
     public void push(Object element) {
-        if (size() == size) {
-
+        if (size() == size)
             //if queue is empty
+                throw new NoSuchElementException();
             N[last] = element;
             last = (last + 1) % size;
-        }
     }
 
     @Override
     public Object pop() {
         Object elem;
-        if (isEmpty()) {
-            elem = N[first];
-            N[first] = null;
-            first = (first + 1) % size;
-            return elem;
-        }
-       return null;
+        if (isEmpty())
+                throw new NoSuchElementException();
+        elem = N[first];
+        N[first] = null;
+        first = (first + 1) % size;
+        return elem;
     }
 
     @Override
     public Object first () {
-        if (isEmpty()) {
+        if (isEmpty())
             throw new NoSuchElementException();
-        }
         return N[first];
     }
 
