@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-class LinkedQueueTestTest extends LinkedQueue<Number> {
+class LinkedQueueTest1 extends LinkedQueue<Number> {
 
     @Test
     void testLinkedQueue() {
