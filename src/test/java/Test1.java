@@ -7,7 +7,7 @@ public class Test1 {
     public Test1(){}
 
     @Test
-    public  void testLinkedQueue() {
+    public  LinkedQueue testLinkedQueue() {
         LinkedQueue q = new LinkedQueue();
         Assertions.assertTrue(q.isEmpty());
 
@@ -15,8 +15,7 @@ public class Test1 {
 
         for(int i =0;i< count;i++){
             q.push(i);
-            Assertions.assertTrue(q.size() <= i+1);
-            //Assertions.assertEquals(0, q.first());
+            Assertions.assertTrue(q.size() < i+1);
             Assertions.assertEquals(0,(int)q.first());
         }
         int current =0;
@@ -26,6 +25,8 @@ public class Test1 {
             current++;
         }
         Assertions.assertTrue(q.isEmpty());
-
+        return q;
     }
+
+
 }

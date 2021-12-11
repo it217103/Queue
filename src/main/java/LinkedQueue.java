@@ -1,24 +1,18 @@
 import java.util.NoSuchElementException;
 
-/*
-Step 1: IF (REAR+1)%MAX = FRONT
-Write " OVERFLOW "
-Goto step 4
-[End OF IF]
-
-Step 2: IF FRONT = -1 and REAR = -1
-SET FRONT = REAR = 0
-ELSE IF REAR = MAX - 1 and FRONT ! = 0
-SET REAR = 0
-ELSE
-SET REAR = (REAR + 1) % MAX
-[END OF IF]
-
-Step 3: SET QUEUE[REAR] = VAL
-
-Step 4: EXIT
- */
 public class LinkedQueue implements Queue {
+
+    public int getFirst() {
+        return first;
+    }
+
+    public int getLast() {
+        return last;
+    }
+
+    public int getSize() {
+        return size;
+    }
 
     private int first;
     private int last;
@@ -59,6 +53,7 @@ public class LinkedQueue implements Queue {
             //N[first] = null;
             first = (first + 1) % size;
             }
+        System.out.println("Removed element: " + elem);
             return elem;
         }
 
@@ -67,17 +62,14 @@ public class LinkedQueue implements Queue {
 
         return N[first];
     }
-
     @Override
     public boolean isEmpty () {
         return first ==last;
     }
-
     @Override
     public int size () {
         return (size - first + last)%size;
     }
-
     @Override
     public void clear () {
         this.first = 0;
