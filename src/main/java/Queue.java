@@ -1,11 +1,11 @@
-public interface Queue<Object> {
+public interface Queue<E> {
 
 
-    void push(Object element);
+    void push(E element);
 
-    Object pop();
+    E pop();
 
-    Object first();
+    E first();
 
 
     boolean isEmpty();

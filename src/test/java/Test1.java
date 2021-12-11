@@ -3,7 +3,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertTrue;
 
-class Test1 {
+public class Test1 {
+    public Test1(){}
 
     @Test
     public  void testLinkedQueue() {
@@ -14,7 +15,6 @@ class Test1 {
 
         for(int i =0;i< count;i++){
             q.push(i);
-            System.out.println(q);
             Assertions.assertTrue(q.size() <= i+1);
             //Assertions.assertEquals(0, q.first());
 
