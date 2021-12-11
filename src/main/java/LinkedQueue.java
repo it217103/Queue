@@ -24,7 +24,7 @@ public class LinkedQueue implements Queue {
     private int last;
     private int size;
     private Object[] N;
-    public static final int SIZE = 100;
+    public static final int SIZE = 1000;
 
     public LinkedQueue() {
         this(SIZE);
@@ -36,38 +36,7 @@ public class LinkedQueue implements Queue {
         size = siz;
         N = new Object[size];
     }
-/*
- if ((front == 0 && rear == size - 1) || (rear == (front - 1) % (size - 1)))	// Condition if queue is full
-        {
-            System.out.print ("Queue Full!");
-        }
-        else if (front == -1)	// Condition for empty queue.
-        {
-            front = 0;
-            rear = 0;
-            queue.add(rear,value);
-        }
-        else if (rear == size - 1 && front != 0)
-        {
-            rear = 0;
-            queue.set(rear,value);
-        }
-        else
-        {
-            rear = (rear + 1);
-    	    // Adding a new element if
-	        if (front <= rear)
-    	    {
-                queue.add(rear, value);
-            }
-            // Else updating old value
-	        else
-        	{
-                queue.set(rear, value);
-            }
-        }
-    }
- */
+
     @Override
     public void push(Object element) {
         if(!isEmpty()){
@@ -87,20 +56,15 @@ public class LinkedQueue implements Queue {
             throw new NoSuchElementException("");
         }else {
             elem = N[first];
-            if (isEmpty()) {
-                first = -1;
-                last = -1;
-            } else {
-                //N[first] = null;
-                first = (first + 1) % size;
+            //N[first] = null;
+            first = (first + 1) % size;
             }
             return elem;
         }
-    }
+
     @Override
-    public Object first () {
-        if (isEmpty())
-            throw new NoSuchElementException();
+    public Object first () throws NoSuchElementException {
+
         return N[first];
     }
 

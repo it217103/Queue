@@ -17,8 +17,7 @@ public class Test1 {
             q.push(i);
             Assertions.assertTrue(q.size() <= i+1);
             //Assertions.assertEquals(0, q.first());
-
-            Assertions.assertEquals(i,(int)q.first());
+            Assertions.assertEquals(0,(int)q.first());
         }
         int current =0;
         while(!q.isEmpty()){
