@@ -15,7 +15,6 @@ class Test2{
         q.clear();
         int count=100;
         for(int i=0;i<count;i++){
-
             System.out.println("Count "+i +" First: "+ q.getFirst()+" Last : " +q.getLast()+" Size: "+q.getSize());
         }
 

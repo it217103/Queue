@@ -1,6 +1,8 @@
 import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 public class LinkedQueue implements Queue {
+
 
     public int getFirst() {
         return first;
@@ -8,6 +10,10 @@ public class LinkedQueue implements Queue {
 
     public int getLast() {
         return last;
+    }
+
+    public static void setSIZE(int SIZE) {
+        LinkedQueue.SIZE = SIZE;
     }
 
     public int getSize() {
@@ -18,7 +24,7 @@ public class LinkedQueue implements Queue {
     private int last;
     private int size;
     private Object[] N;
-    public static final int SIZE = 1000;
+    public static  int SIZE ;
 
     public LinkedQueue() {
         this(SIZE);
@@ -32,7 +38,13 @@ public class LinkedQueue implements Queue {
     }
 
     @Override
+    public void push(Object element,int size) {
+
+    }
+
+    @Override
     public void push(Object element) {
+
         if(!isEmpty()){
             System.out.println("full");
         }else if (first ==-1){
@@ -41,6 +53,7 @@ public class LinkedQueue implements Queue {
         last = (last + 1) % size;
         N[last] = element;
         System.out.println("Inserted " + element);
+
     }
 
     @Override
