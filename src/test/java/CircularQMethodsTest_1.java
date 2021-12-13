@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-class LinkedQMethodsTest_1 extends LinkedQueue {
+class CircularQMethodsTest_1 extends CircularQueue {
 
     @Test
     void testPush() {

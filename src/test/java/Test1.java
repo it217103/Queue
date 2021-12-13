@@ -7,8 +7,8 @@ public class Test1 {
     public Test1(){}
 
     @Test
-    public  LinkedQueue testLinkedQueue() {
-        LinkedQueue q = new LinkedQueue();
+    public CircularQueue testLinkedQueue() {
+        CircularQueue q = new CircularQueue();
         Assertions.assertTrue(q.isEmpty());
 
         int count = 100;

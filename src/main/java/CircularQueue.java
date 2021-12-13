@@ -1,7 +1,15 @@
 import java.util.NoSuchElementException;
-import java.util.Scanner;
 
-public class LinkedQueue implements Queue {
+public class CircularQueue implements Queue {
+
+
+
+    private int first;
+    private int last;
+    private int size;
+    private final Object[] N;
+
+    private static  int SIZE= 100 ;
 
 
     public int getFirst() {
@@ -12,34 +20,27 @@ public class LinkedQueue implements Queue {
         return last;
     }
 
-    public static void setSIZE(int SIZE) {
-        LinkedQueue.SIZE = SIZE;
-    }
+
 
     public int getSize() {
         return size;
     }
 
-    private int first;
-    private int last;
-    private int size;
-    private Object[] N;
-    public static  int SIZE ;
 
-    public LinkedQueue() {
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+
+    public CircularQueue() {
         this(SIZE);
         first=-1;
         last=-1;
     }
 
-    public LinkedQueue(int siz) {
+    public CircularQueue(int siz) {
         size = siz;
         N = new Object[size];
-    }
-
-    @Override
-    public void push(Object element,int size) {
-
     }
 
     @Override
@@ -66,7 +67,8 @@ public class LinkedQueue implements Queue {
             //N[first] = null;
             first = (first + 1) % size;
             }
-        System.out.println("Removed element: " + elem);
+        System.out.println("N[first] value : " + elem);
+        System.out.println("Size : " + size);
             return elem;
         }
 

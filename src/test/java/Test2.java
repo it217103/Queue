@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class Test2{
     public Test2() {
@@ -9,7 +6,7 @@ class Test2{
 
     @Test
     public void testLinkedQueue2() {
-        LinkedQueue q ;
+        CircularQueue q ;
         Test1 test = new Test1();
         q= test.testLinkedQueue();
         q.clear();

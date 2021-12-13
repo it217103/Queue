@@ -2,7 +2,7 @@ public interface Queue<E> {
 
 
     void push(E element);
-    void push(E element,int size);
+
 
     E pop();
 
