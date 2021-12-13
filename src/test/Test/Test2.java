@@ -1,3 +1,4 @@
+
 import org.junit.jupiter.api.Test;
 
 class Test2{
@@ -5,10 +6,10 @@ class Test2{
     }
 
     @Test
-    public void testLinkedQueue2() {
+    public void testCircularQueue2() {
         CircularQueue q ;
-        Test1 test = new Test1();
-        q= test.testLinkedQueue();
+        MainTest test = new MainTest();
+        q= test.testCircularQueue();
         q.clear();
         int count=100;
         for(int i=0;i<count;i++){
