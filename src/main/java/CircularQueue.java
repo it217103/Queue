@@ -2,35 +2,11 @@ import java.util.NoSuchElementException;
 
 public class CircularQueue implements Queue {
 
-
-
     private int first;
     private int last;
     private int size;
     private final Object[] N;
-
     private static  int SIZE= 100 ;
-
-
-    public int getFirst() {
-        return first;
-    }
-
-    public int getLast() {
-        return last;
-    }
-
-
-
-    public int getSize() {
-        return size;
-    }
-
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
 
     public CircularQueue() {
         this(SIZE);
@@ -44,10 +20,10 @@ public class CircularQueue implements Queue {
     }
 
     @Override
-    public void push(Object element) {
+    public void push(Object element) throws NoSuchElementException {
 
         if(!isEmpty()){
-            System.out.println("full");
+            System.out.println("Not empty");
         }else if (first ==-1){
             first=0;
         }
@@ -61,7 +37,7 @@ public class CircularQueue implements Queue {
     public Object pop() {
         Object elem;
         if (first==-1) {
-            throw new NoSuchElementException("");
+            throw new NoSuchElementException();
         }else {
             elem = N[first];
             //N[first] = null;
@@ -91,4 +67,22 @@ public class CircularQueue implements Queue {
         this.last = 0;
         this.size = 0;
     }
+
+    public int getFirst() {
+        return first;
+    }
+
+    public int getLast() {
+        return last;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
 }

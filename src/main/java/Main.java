@@ -10,15 +10,11 @@ public class Main {
         poppinQ(x);
     }
 
-
     public static int pushingQ() {
+
     boolean moreE = true;
     int size;
-
-
     qSize = q.getSize();
-
-
     do {
         for (int i = 0; i < qSize; i++) {
             System.out.println("Adding element " + i + "to queue");
