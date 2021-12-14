@@ -1,10 +1,12 @@
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class MainTest extends CircularQueue {
+class CircularQueueTest extends CircularQueue {
+
+    public CircularQueueTest(){}
+
     @Test
-    public CircularQueue testCircularQueue() {
+    public  void testCircularQueue(){
         CircularQueue q = new CircularQueue();
         Assertions.assertTrue(q.isEmpty());
 
@@ -22,6 +24,7 @@ class MainTest extends CircularQueue {
             current++;
         }
         Assertions.assertTrue(q.isEmpty());
-        return q;
+
     }
+
 }
